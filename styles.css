@@ -1,0 +1,587 @@
+/* Minimalistic styles for initial name input */
+.name-input-container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 1rem;
+   padding: 2rem;
+   background-color: rgba(20, 20, 30, 0.8); /* Dark background */
+   border-radius: 8px; /* Less rounded */
+   color: white;
+}
+
+.name-input-container h2 {
+   font-size: 1.5rem;
+   margin-bottom: 0.5rem;
+}
+
+.name-input-container input {
+   padding: 0.75rem 1rem;
+   border-radius: 4px; /* Less rounded input */
+   border: 1px solid rgba(255, 255, 255, 0.2);
+   background-color: rgba(255, 255, 255, 0.05);
+   color: white;
+}
+
+.name-input-container button {
+   padding: 0.6rem 1.2rem;
+   border-radius: 4px; /* Less rounded button */
+   border: none;
+   background-color: #6a6ab8; /* Simple color */
+   color: white;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+}
+
+.name-input-container button:hover {
+   background-color: #8a8ac8;
+}
+
+/* Specific styles for the input-container and its children */
+.glass-panel.input-container {
+   background: rgba(
+      20,
+      20,
+      30,
+      0.95
+   ); /* Matte dark gray with slight transparency */
+   backdrop-filter: blur(12px); /* Subtle blur for a classy matte effect */
+   border-radius: 8px; /* More Squarish - reduced from 24px */
+   border: 2px solid rgba(255, 255, 255, 0.1); /* Subtle white border for elegance */
+   padding: 3rem 2.5rem; /* Increased padding for sophistication */
+   width: 100%;
+   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3), 0 0 15px rgba(100, 100, 150, 0.2); /* Soft shadow for depth */
+   transition: all 400ms ease; /* Smooth transitions for interactivity */
+   position: relative;
+   overflow: hidden;
+   display: none; /* Hidden initially, shown after name input - will be removed later */
+}
+
+.glass-panel.input-container.visible {
+   display: flex; /* To make it visible if needed later */
+}
+
+.glass-panel.input-container::after {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: linear-gradient(
+      135deg,
+      rgba(50, 50, 70, 0.1),
+      rgba(30, 30, 50, 0.1)
+   ); /* Subtle matte gradient */
+   z-index: -1;
+   border-radius: 8px; /* More Squarish - reduced from 24px */
+}
+
+h1 {
+   font-size: 3rem;
+   font-weight: 800;
+   text-align: center;
+   text-transform: uppercase; /* Modern, classy touch */
+   background: linear-gradient(
+      90deg,
+      #e0e0ff,
+      #a0a0d0,
+      #e0e0ff
+   ); /* Sophisticated gradient */
+   -webkit-background-clip: text;
+   background-clip: text;
+   -webkit-text-fill-color: transparent;
+   text-shadow: 0 2px 8px rgba(160, 160, 200, 0.3); /* Subtle glow */
+   letter-spacing: 1px;
+   font-family: "Poppins", sans-serif; /* Elegant, modern font */
+   margin-bottom: 1.5rem;
+}
+
+.description {
+   font-size: 1.1rem;
+   line-height: 1.8;
+   color: rgba(255, 255, 255, 0.8); /* Soft white for readability */
+   text-align: center;
+   max-width: 600px;
+   font-family: "Roboto", sans-serif; /* Clean, classy font */
+   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+   margin-bottom: 1.5rem;
+}
+
+.input-field {
+   width: 100%;
+   max-width: 550px; /* Slightly wider for a premium look */
+}
+
+input {
+   width: 100%;
+   background: rgba(255, 255, 255, 0.03); /* Very subtle matte white */
+   border: 2px solid rgba(255, 255, 255, 0.15); /* Soft white border */
+   padding: 1.2rem 1.8rem;
+   border-radius: 8px; /* More Squarish - reduced from 30px */
+   font-size: 1.2rem;
+   color: #fff;
+   transition: all 400ms ease;
+   box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1); /* Subtle inset for matte effect */
+   font-family: "Poppins", sans-serif;
+}
+
+input:focus {
+   border-color: rgba(160, 160, 200, 0.4); /* Classy light purple */
+   box-shadow: 0 0 15px rgba(160, 160, 200, 0.3),
+      inset 0 0 10px rgba(160, 160, 200, 0.2); /* Soft glow */
+   transform: scale(1.02); /* Slight zoom for interactivity */
+}
+
+.generate-btn {
+   background: linear-gradient(
+      135deg,
+      #4a4a7a,
+      #8a8ac8
+   ); /* Matte purple gradient */
+   border: none;
+   padding: 1rem 2.5rem;
+   border-radius: 8px; /* More Squarish - reduced from 30px */
+   font-size: 1.2rem;
+   font-weight: 700;
+   color: #fff;
+   cursor: pointer;
+   transition: all 400ms ease;
+   box-shadow: 0 5px 20px rgba(74, 74, 122, 0.3),
+      0 0 10px rgba(138, 138, 200, 0.2); /* Soft shadow */
+   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+   font-family: "Poppins", sans-serif;
+   position: relative;
+   overflow: hidden;
+}
+
+.generate-btn::after {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.05),
+      rgba(255, 255, 255, 0.01)
+   ); /* Subtle matte shimmer */
+   z-index: 0;
+   animation: shimmer 2s linear infinite;
+}
+
+@keyframes shimmer {
+   0% {
+      transform: translateX(-100%);
+   }
+   100% {
+      transform: translateX(100%);
+   }
+}
+
+.generate-btn:hover {
+   transform: translateY(-3px) scale(1.05);
+   box-shadow: 0 8px 30px rgba(74, 74, 122, 0.5),
+      0 0 15px rgba(138, 138, 200, 0.3);
+}
+
+.controls {
+   display: flex;
+   gap: 1.5rem;
+   flex-wrap: wrap;
+   justify-content: center;
+   margin-top: 1rem;
+}
+
+.control-btn {
+   background: linear-gradient(
+      135deg,
+      #3a3a6a,
+      #6a6ab8
+   ); /* Matte blue-purple gradient */
+   border: none;
+   padding: 0.8rem 1.5rem;
+   border-radius: 8px; /* More Squarish - reduced from 25px */
+   font-size: 1rem;
+   color: #fff;
+   cursor: pointer;
+   transition: all 400ms ease;
+   box-shadow: 0 4px 15px rgba(58, 58, 106, 0.3),
+      0 0 8px rgba(106, 106, 184, 0.2);
+   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+   font-family: "Poppins", sans-serif;
+}
+
+.control-btn:hover {
+   transform: scale(1.1);
+   box-shadow: 0 6px 20px rgba(58, 58, 106, 0.5),
+      0 0 12px rgba(106, 106, 184, 0.3);
+}
+:root {
+   --bg-color: #0a0c1a; /* Deeper background */
+   --glass-bg: rgba(20, 25, 40, 0.85);
+   --border-color: rgba(255, 255, 255, 0.15);
+   --text-color: rgba(255, 255, 255, 0.95);
+}
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      sans-serif;
+}
+
+body {
+   min-height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   /* background: var(--bg-color); */
+   overflow-x: hidden;
+   color: var(--text-color);
+   background: linear-gradient(
+      135deg,
+      var(--bg-color),
+      #1a1e33
+   ); /* Gradient background */
+}
+
+h1 {
+   font-size: 3rem;
+   text-shadow: 0 4px 12px rgba(160, 160, 255, 0.4),
+      0 0 20px rgba(255, 255, 255, 0.2);
+   background: linear-gradient(90deg, #ffffff, #a0a0ff, #ff80bf);
+   -webkit-background-clip: text;
+   background-clip: text;
+   -webkit-text-fill-color: transparent;
+   /* text-fill-color: transparent; */
+}
+
+.pixel:hover {
+   transform: scale(1.1);
+   box-shadow: 0 0 10px currentColor, 0 0 20px rgba(255, 255, 255, 0.3); /* Glow effect */
+   transition: all 300ms ease;
+}
+
+.control-btn {
+   background: linear-gradient(135deg, #3b2d9f, #8a6dff);
+   border: none;
+   box-shadow: 0 4px 15px rgba(91, 66, 243, 0.4);
+}
+
+.control-btn:hover {
+   transform: scale(1.05);
+   box-shadow: 0 6px 20px rgba(91, 66, 243, 0.6);
+}
+.container {
+   position: relative;
+   width: 100%;
+   max-width: 80rem;
+   padding: 3rem 2rem;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 2rem;
+}
+
+.glass-panel {
+   background: var(--glass-bg);
+   backdrop-filter: blur(15px);
+   -webkit-backdrop-filter: blur(10px);
+   border-radius: 8px; /* More Squarish - reduced from 16px */
+   border: 1px solid var(--border-color);
+   padding: 2rem;
+   width: 100%;
+   /* box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); */
+   box-shadow: 0 12px 48px rgba(0, 0, 0, 0.3), 0 0 20px rgba(91, 66, 243, 0.2); /* Neon glow */
+   transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-container {
+   display: flex;
+   flex-direction: column;
+   gap: 1.5rem;
+   align-items: center;
+}
+
+.description {
+   font-size: 1.1rem;
+   line-height: 1.6;
+   text-align: center;
+   max-width: 600px;
+   margin-bottom: 1rem;
+}
+
+.input-field {
+   position: relative;
+   width: 100%;
+   max-width: 500px;
+}
+
+input {
+   width: 100%;
+   background: rgba(255, 255, 255, 0.07);
+   border: 1px solid rgba(255, 255, 255, 0.15);
+   padding: 1rem 1.5rem;
+   border-radius: 8px; /* More Squarish - reduced from 50px */
+   font-size: 1.1rem;
+   color: white;
+   transition: all 300ms ease;
+   outline: none;
+}
+
+input:focus {
+   border-color: rgba(255, 255, 255, 0.3);
+   box-shadow: 0 0 15px rgba(100, 100, 255, 0.3);
+}
+
+.generate-btn {
+   background: linear-gradient(135deg, #5b42f3 0%, #c0b1fc 100%);
+   border: none;
+   padding: 0.8rem 2rem;
+   border-radius: 8px; /* More Squarish - reduced from 50px */
+   font-size: 1rem;
+   font-weight: 600;
+   color: white;
+   cursor: pointer;
+   transition: all 300ms ease;
+   box-shadow: 0 4px 15px rgba(91, 66, 243, 0.4);
+}
+
+.generate-btn:hover {
+   transform: translateY(-2px);
+   box-shadow: 0 6px 20px rgba(91, 66, 243, 0.6);
+}
+
+.generate-btn:active {
+   transform: translateY(1px);
+}
+
+.pixel-container {
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(24px, 1fr));
+   gap: 4px;
+   width: 100%;
+   margin-top: 1rem;
+   transition: all 300ms ease;
+   opacity: 0;
+   transform: translateY(20px);
+}
+
+.pixel-container.visible {
+   opacity: 1;
+   transform: translateY(0);
+}
+
+.pixel {
+   aspect-ratio: 1;
+   border-radius: 6px; /* More Rounded Pixels - adjusted from 4px, but not circles */
+   background-color: transparent;
+   transition: background-color 500ms ease,
+      transform 300ms cubic-bezier(0.4, 0, 0.2, 1); /* Smooth background transition */
+   will-change: transform, background-color;
+   cursor: pointer;
+}
+
+.pixel:hover {
+   transform: scale(1.1);
+   z-index: 2;
+}
+.pixel {
+   position: relative;
+}
+
+.pixel::before {
+   content: "";
+   position: absolute;
+   top: -70px; /* Position above pixel */
+   left: 50%;
+   transform: translateX(-50%);
+   width: 40px;
+   height: 40px; /* Larger main color */
+   background-color: currentColor; /* Main pixel color */
+   border-radius: 8px;
+   opacity: 0;
+   transition: opacity 300ms ease, transform 300ms ease;
+   z-index: 4;
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.pixel::after {
+   content: "";
+   position: absolute;
+   top: -25px; /* Adjusted to sit above pixel but below main color */
+   left: 50%;
+   transform: translateX(-50%);
+   width: 60px;
+   height: 20px; /* Similar colors bar */
+   background: linear-gradient(90deg, var(--color1), var(--color2));
+   border-radius: 4px;
+   opacity: 0;
+   transition: opacity 300ms ease, transform 300ms ease;
+   pointer-events: none;
+   z-index: 3;
+}
+
+.pixel:hover::before,
+.pixel:hover::after {
+   opacity: 1;
+   transform: translateX(-50%) translateY(-10px); /* Smooth slide up */
+}
+
+/* Matte-glossy-black container */
+.pixel:hover::before {
+   background: rgba(10, 10, 20, 0.9); /* Matte-glossy-black */
+   backdrop-filter: blur(8px);
+   border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Ensure tooltip stays within screen */
+.pixel {
+   overflow: visible; /* Allow tooltip to show */
+}
+.wave-animation {
+   position: relative;
+   width: 100%;
+   height: 60px;
+   margin-top: 2rem;
+   overflow: hidden;
+   opacity: 0;
+   transition: opacity 300ms ease;
+}
+
+.wave-animation.visible {
+   opacity: 1;
+}
+
+.wave {
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: linear-gradient(
+      90deg,
+      rgba(255, 50, 50, 0.2) 0%,
+      rgba(255, 150, 50, 0.2) 14%,
+      rgba(255, 255, 50, 0.2) 28%,
+      rgba(50, 255, 50, 0.2) 42%,
+      rgba(50, 150, 255, 0.2) 56%,
+      rgba(150, 50, 255, 0.2) 70%,
+      rgba(255, 50, 150, 0.2) 85%,
+      rgba(255, 50, 50, 0.2) 100%
+   );
+   animation: wave-animation 8s linear infinite;
+   border-radius: 8px;
+}
+
+@keyframes wave-animation {
+   0% {
+      transform: translateX(0) scaleY(0.2);
+   }
+   50% {
+      transform: translateX(-25%) scaleY(0.8);
+   }
+   100% {
+      transform: translateX(0) scaleY(0.2);
+   }
+}
+
+.wave:nth-child(2) {
+   animation-delay: -2s;
+   opacity: 0.7;
+}
+
+.wave:nth-child(3) {
+   animation-delay: -4s;
+   opacity: 0.5;
+}
+
+.wave:nth-child(4) {
+   animation-delay: -6s;
+   opacity: 0.3;
+}
+
+.controls {
+   display: flex;
+   gap: 1rem;
+   margin-top: 1rem;
+   flex-wrap: wrap;
+   justify-content: center;
+   display: none; /* Hide controls initially */
+}
+
+.controls.visible {
+   display: flex; /* Show controls when needed */
+}
+
+.control-btn {
+   background: rgba(255, 255, 255, 0.1);
+   border: 1px solid rgba(255, 255, 255, 0.15);
+   padding: 0.5rem 1rem;
+   border-radius: 8px; /* More Squarish - reduced from 50px */
+   font-size: 0.9rem;
+   color: white;
+   cursor: pointer;
+   transition: all 300ms ease;
+}
+
+.control-btn:hover {
+   background: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+   .container {
+      padding: 2rem 1rem;
+   }
+
+   h1 {
+      font-size: 2rem;
+   }
+
+   .description {
+      font-size: 1rem;
+   }
+
+   .pixel-container {
+      grid-template-columns: repeat(auto-fill, minmax(18px, 1fr));
+      gap: 3px;
+   }
+}
+
+@media (max-width: 480px) {
+   .pixel-container {
+      grid-template-columns: repeat(auto-fill, minmax(12px, 1fr));
+      gap: 2px;
+   }
+
+   h1 {
+      font-size: 1.5rem;
+   }
+}
+
+@keyframes pulse-animation {
+   /* Renamed to avoid conflict and for clarity */
+   0% {
+      transform: scale(1);
+   }
+   100% {
+      transform: scale(1.15);
+   } /* Slightly stronger pulse */
+}
+@keyframes heartbeat-pulse {
+   0% {
+      transform: scale(1);
+      opacity: 0.8;
+   }
+   50% {
+      transform: scale(1.2);
+      opacity: 1;
+   }
+   100% {
+      transform: scale(1);
+      opacity: 0.8;
+   }
+}
